@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        robotoSerif:'var(--font-roboto-serif)',
+        IBMPlex:'var(--font-IBM-Plex)'
+      }
     },
   },
   plugins: [],

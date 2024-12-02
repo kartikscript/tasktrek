@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import {Roboto_Serif, IBM_Plex_Sans} from "next/font/google";
 import "./globals.css";
+import SideBar from "@/components/shared/SideBar";
+import Image from "next/image";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const robotoSerif = Roboto_Serif({
+  variable:'--font-roboto-serif',
+  weight:['100','200','300','400','500','600','700','800'],
+  subsets:['latin'],
+})
+const ibmPlex = IBM_Plex_Sans({
+  variable:'--font-IBM-Plex',
+  weight:['100','200','300','400','500','600','700'],
+  subsets:['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,8 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ibmPlex.variable} ${robotoSerif.variable} antialiased  flex gap-3`}
       >
+        <Image
+        src={'/main.jpg'}
+        alt="notebook"
+        fill
+        sizes="100vw,100vh"
+        className="-z-10 opacity-10"
+        />
+        <SideBar/>
         {children}
       </body>
     </html>
