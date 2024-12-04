@@ -9,6 +9,7 @@ const SearchBox = () => {
       </label>
       <input 
        id='searchInput'
+       name='searchInput'
        className=' font-medium bg-transparent border-none focus:ring-0 outline-none'
        placeholder='Search your tasks...'
        />

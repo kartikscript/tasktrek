@@ -28,14 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibmPlex.variable} ${robotoSerif.variable} antialiased  flex gap-3`}
+        className={`${ibmPlex.variable} ${robotoSerif.variable} antialiased relative flex `}
       >
         <Image
         src={'/main.jpg'}
         alt="notebook"
         fill
         sizes="100vw,100vh"
-        className="-z-10 opacity-10"
+        className="fixed size-full top-0 left-0 -z-10 opacity-10 blur-sm"
         />
         <SideBar/>
         {children}
